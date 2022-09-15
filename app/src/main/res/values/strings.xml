@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">11pac</string>
+    <string name="welcome">Добро пожаловать</string>
+    <string name="control_expenses">Учет расходов</string>
+    <string name="expense_name">Название расхода</string>
+    <string name="cost">Цена</string>
+    <string name="add">Добавить</string>
+    <string name="showInfo">Показать информацию</string>
+</resources>
