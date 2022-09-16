@@ -6,4 +6,7 @@
     <string name="cost">Цена</string>
     <string name="add">Добавить</string>
     <string name="showInfo">Показать информацию</string>
+    <string name="expenses_book">Учет расходов</string>
+    <string name="cont">Продолжить</string>
+
 </resources>

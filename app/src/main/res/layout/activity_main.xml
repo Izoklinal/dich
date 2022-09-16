@@ -23,12 +23,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/expense_name"
-        app:layout_constraintBottom_toTopOf="@+id/editText2"
+        app:layout_constraintBottom_toTopOf="@+id/editText_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/editText_name"
         android:layout_width="240dp"
         android:layout_height="48dp"
         android:layout_marginTop="80dp"
@@ -46,10 +46,10 @@
         android:text="@string/cost"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_name" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editText_cost"
         android:layout_width="240dp"
         android:layout_height="48dp"
         android:minWidth="48dp"
@@ -68,10 +68,10 @@
         android:text="@string/add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_cost" />
 
     <Button
-        android:id="@+id/add_button2"
+        android:id="@+id/show_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
