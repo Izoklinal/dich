@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
@@ -17,10 +18,13 @@ class ShowActivity : AppCompatActivity() {
         var all_text = findViewById<TextView>(R.id.textView_all)
         getExpense()
         bookList.forEach{
-            Log.d("YO", it.toString())
-            all_text.text = bookList.toString()
-            Toast.makeText(this, "yes", Toast.LENGTH_SHORT).show()
-            Log.d("YO", bookList.toString())
+            //Log.d("YO", it.toString())
+            //all_text.text = bookList.toString()
+            //Toast.makeText(this, "yes", Toast.LENGTH_SHORT).show()
+            //Log.d("YO", bookList.toString())
+            val rv = findViewById<RecyclerView>(R.id.rv)
+
+            val adapter = 
         }
     }
     private fun getExpense(){
