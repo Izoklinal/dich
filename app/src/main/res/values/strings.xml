@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">elevenpac</string>
+    <string name="typeValue">Введите данные</string>
+    <string name="name">Название</string>
+    <string name="cost">Цена</string>
+    <string name="add">Добавить</string>
+    <string name="checkList">Посмотреть список</string>
+</resources>
