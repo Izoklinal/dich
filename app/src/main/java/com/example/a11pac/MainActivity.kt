@@ -13,24 +13,33 @@ import com.google.gson.reflect.TypeToken
 
 class MainActivity : AppCompatActivity() {
     private var bookList: MutableList<Expenses> = mutableListOf()
-    private lateinit var name: EditText
-    private lateinit var cost: EditText
+    private var change: Int = 0
+    private var position: Int = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        getExpense()
         val btn_add = findViewById<Button>(R.id.add_button)
         val btn_show = findViewById<Button>(R.id.show_button)
         val name = findViewById<EditText>(R.id.editText_name)
         val cost = findViewById<EditText>(R.id.editText_cost)
-
+        getExpense()
         btn_add.setOnClickListener(View.OnClickListener {
             if (name.text.toString()!="" && cost.text.toString()!="")
             {
-                //val temp: Expenses = Expenses(name.text.toString(), cost.text.toString().toInt())
-                addExpense(name.text.toString(), cost.text.toString().toInt())
-                Toast.makeText(this, "Успешно добавлено", Toast.LENGTH_SHORT).show()
+                if (change == 0)
+                {
+                    val temp: Expenses = Expenses(name.text.toString(), cost.text.toString().toInt())
+                    addExpense(name.text.toString(), cost.text.toString().toInt())
+                    Toast.makeText(this, "Успешно добавлено", Toast.LENGTH_SHORT).show()
+                }
+                else
+                {
+                    val temp: Expenses = Expenses(name.text.toString(), cost.text.toString().toInt())
+                    bookList.set(position, temp)
+                    val what = bookList[position]
+                    Toast.makeText(this, "$what", Toast.LENGTH_SHORT).show()
+                }
             }
             else
             {
@@ -41,6 +50,19 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, ShowActivity::class.java)
             startActivity(intent)
         })
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val name = findViewById<EditText>(R.id.editText_name)
+        val cost = findViewById<EditText>(R.id.editText_cost)
+        position = intent.getIntExtra("pos", -1)
+        if (position!=-1)
+        {
+            name.setText(bookList[position].name)
+            cost.setText(bookList[position].cost.toString())
+            change = 1
+        }
     }
     private fun getExpense(){
         val preferences = getSharedPreferences("pref", MODE_PRIVATE)
